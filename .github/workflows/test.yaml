@@ -5,10 +5,13 @@ on:
  push:
    branches:
      - main
-     - 'dev'
+     - dev
+     - master
+
 jobs:
   hello-world:
     runs-on:  ubuntu-20.04
+
     steps:
-    - name: Say hello world
-      run: echo Welcome to the GitHub Actions workshop !
+     - name: Say hello world
+       run: echo Welcome to the GitHub Actions workshop !
