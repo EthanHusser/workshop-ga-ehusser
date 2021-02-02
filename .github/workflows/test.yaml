@@ -18,10 +18,16 @@ jobs:
        run: echo Welcome to the GitHub Actions workshop !
   unit-test:
     runs-on: ubuntu-20.04
+    container: docker://epitechcontent/epitest-docker
+
     steps:
-      - name: check unit-tests and coverage
+      - name: Checkout
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - run: make unit-tests
-            make coverage
+
+      - name: Run tests
+        shell: bash
+        run: make tests_run
+
+      - name: Get Coverage
+        shell: bash
+        run: make coverage
