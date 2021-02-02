@@ -1,4 +1,6 @@
 name: Tests
+
+
 on:
  push:
    branches:
@@ -7,5 +9,6 @@ on:
 jobs:
   hello-world:
     runs-on:  ubuntu-20.04
-    Say hello world:
+    steps:
+    - name: Say hello world
     run: echo Welcome to the GitHub Actions workshop !
