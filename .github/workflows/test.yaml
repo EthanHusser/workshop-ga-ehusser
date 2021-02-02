@@ -16,3 +16,11 @@ jobs:
      - name: Say hello world
        shell: bash
        run: echo Welcome to the GitHub Actions workshop !
+  unit-test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: check unit-tests and coverage
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+        run: make unit-tests && make coverage
